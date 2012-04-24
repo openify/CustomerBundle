@@ -1,0 +1,4 @@
+UserBundle
+==========
+
+A lightweight UserBundle
