@@ -1,9 +1,9 @@
 <?php
 
-namespace Openify\Bundle\UserBundle;
+namespace Openify\Bundle\CustomerBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class OpenifyUserBundle extends Bundle
+class OpenifyCustomerBundle extends Bundle
 {
 }

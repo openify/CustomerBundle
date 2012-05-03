@@ -12,7 +12,7 @@
    bootstrap="./Tests/bootstrap.php">
 
     <testsuites>
-        <testsuite name="OpenifyUserBundle Test Suite">
+        <testsuite name="OpenifyCustomerBundle Test Suite">
             <directory suffix="Test.php">./Tests</directory>
         </testsuite>
     </testsuites>

@@ -1,17 +1,17 @@
 <?php
 
-namespace Openify\Bundle\UserBundle\Entity;
+namespace Openify\Bundle\CustomerBundle\Entity;
 
 use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Openify\Bundle\EcommerceBundle\Entity\ShopUsers
+ * Openify\Bundle\CustomerBundle\Entity\Customer
  *
  * @ORM\Table(name="shop_users")
  * @ORM\Entity
  */
-class User implements UserInterface {
+class Customer implements UserInterface {
     /**
      * @var integer $id
      *

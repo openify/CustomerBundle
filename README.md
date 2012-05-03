@@ -1,4 +1,4 @@
-UserBundle
+CustomerBundle
 ==========
 
-A lightweight UserBundle
+A lightweight CustomerBundle

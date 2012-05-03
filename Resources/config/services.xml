@@ -6,11 +6,11 @@
 
     <!--
     <parameters>
-        <parameter key="openify_user.example.class">Openify\Bundle\UserBundle\Example</parameter>
+        <parameter key="openify_customer.example.class">Openify\Bundle\CustomerBundle\Example</parameter>
     </parameters>
 
     <services>
-        <service id="openify_user.example" class="%openify_user.example.class%">
+        <service id="openify_customer.example" class="%openify_customer.example.class%">
             <argument type="service" id="service_id" />
             <argument>plain_value</argument>
             <argument>%parameter_name%</argument>
