@@ -1,9 +1,9 @@
 {
-    "name": "openify/user-bundle",
+    "name": "openify/customer-bundle",
     "type": "symfony-bundle",
-    "description": "A lightweight UserBundle",
+    "description": "A lightweight CustomerBundle",
     "keywords": ["user", "symfony2", "bundle", "openify"],
-    "homepage": "http://github.com/openify/UserBundle",
+    "homepage": "http://github.com/openify/CustomerBundle",
     "license": "MIT",
 
     "authors": [
@@ -19,9 +19,9 @@
 
     "autoload": {
         "psr-0": {
-            "Openify\\Bundle\\UserBundle": ""
+            "Openify\\Bundle\\CustomerBundle": ""
         }
     },
 
-    "target-dir": "Openify/Bundle/UserBundle"
+    "target-dir": "Openify/Bundle/CustomerBundle"
 }
