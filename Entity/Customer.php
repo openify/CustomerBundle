@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Openify\Bundle\CustomerBundle\Entity\Customer
  *
  * @ORM\Table(name="shop_users")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Openify\Bundle\CustomerBundle\Repository\CustomerRepository")
  */
 class Customer implements UserInterface {
     /**
@@ -48,67 +48,67 @@ class Customer implements UserInterface {
     private $priv;
     
     /**
-     * @var string $nom
+     * @var string $lastname
      *
      * @ORM\Column(name="nom", type="string", length=70, nullable=true)
      */
-    private $nom;
+    private $lastname;
     
     /**
-     * @var string $prenom
+     * @var string $firstname
      *
      * @ORM\Column(name="prenom", type="string", length=70, nullable=true)
      */
-    private $prenom;
+    private $firstname;
     
     /**
-     * @var string $societe
+     * @var string $company
      *
      * @ORM\Column(name="societe", type="string", length=70, nullable=true)
      */
-    private $societe;
+    private $company;
     
     /**
-     * @var text $adresse
+     * @var text $adress
      *
      * @ORM\Column(name="adresse", type="text", nullable=true)
      */
-    private $adresse;
+    private $adress;
     
     /**
-     * @var string $postal
+     * @var string $postcode
      *
      * @ORM\Column(name="postal", type="string", length=9, nullable=true)
      */
-    private $postal;
+    private $postcode;
     
     /**
-     * @var string $ville
+     * @var string $city
      *
      * @ORM\Column(name="ville", type="string", length=70, nullable=true)
      */
-    private $ville;
+    private $city;
     
     /**
-     * @var string $pays
+     * @var string $country
      *
      * @ORM\Column(name="pays", type="string", length=2, nullable=true)
      */
-    private $pays;
+    private $country;
     
     /**
-     * @var string $tel
+     * @var string $phone
      *
      * @ORM\Column(name="tel", type="string", length=20, nullable=true)
      */
-    private $tel;
+    private $phone;
     
     /**
-     * @var string $portable
+     * @var string $cellular
      *
      * @ORM\Column(name="portable", type="string", length=20, nullable=true)
      */
-    private $portable;
+    private $cellular;
     
     /**
      * @var string $fax
@@ -118,11 +118,11 @@ class Customer implements UserInterface {
     private $fax;
     
     /**
-     * @var decimal $reduction
+     * @var decimal $discount
      *
      * @ORM\Column(name="reduction", type="decimal", nullable=true)
      */
-    private $reduction;
+    private $discount;
     
     /**
      * @var date $createdAt
@@ -139,18 +139,18 @@ class Customer implements UserInterface {
     private $lastConnection;
     
     /**
-     * @var datetime $actuelConnect
+     * @var datetime $actualConnect
      *
-     * @ORM\Column(name="actuel_connect", type="datetime", nullable=true)
+     * @ORM\Column(name="actual_connect", type="datetime", nullable=true)
      */
-    private $actuelConnect;
+    private $actualConnect;
     
     /**
-     * @var string $tva
+     * @var string $vat
      *
      * @ORM\Column(name="tva", type="string", length=14, nullable=true)
      */
-    private $tva;
+    private $vat;
     
     /**
      * @var text $axxAdmin
@@ -216,294 +216,6 @@ class Customer implements UserInterface {
     public function getPriv() {
         return $this->priv;
     }
-    
-    /**
-     * Set nom
-     *
-     * @param string $nom
-     */
-    public function setNom($nom) {
-        $this->nom = $nom;
-    }
-    
-    /**
-     * Get nom
-     *
-     * @return string 
-     */
-    public function getNom() {
-        return $this->nom;
-    }
-    
-    /**
-     * Set prenom
-     *
-     * @param string $prenom
-     */
-    public function setPrenom($prenom) {
-        $this->prenom = $prenom;
-    }
-    
-    /**
-     * Get prenom
-     *
-     * @return string 
-     */
-    public function getPrenom() {
-        return $this->prenom;
-    }
-    
-    /**
-     * Set societe
-     *
-     * @param string $societe
-     */
-    public function setSociete($societe) {
-        $this->societe = $societe;
-    }
-    
-    /**
-     * Get societe
-     *
-     * @return string 
-     */
-    public function getSociete() {
-        return $this->societe;
-    }
-    
-    /**
-     * Set adresse
-     *
-     * @param text $adresse
-     */
-    public function setAdresse($adresse) {
-        $this->adresse = $adresse;
-    }
-    
-    /**
-     * Get adresse
-     *
-     * @return text 
-     */
-    public function getAdresse() {
-        return $this->adresse;
-    }
-    
-    /**
-     * Set postal
-     *
-     * @param string $postal
-     */
-    public function setPostal($postal) {
-        $this->postal = $postal;
-    }
-    
-    /**
-     * Get postal
-     *
-     * @return string 
-     */
-    public function getPostal() {
-        return $this->postal;
-    }
-    
-    /**
-     * Set ville
-     *
-     * @param string $ville
-     */
-    public function setVille($ville) {
-        $this->ville = $ville;
-    }
-    
-    /**
-     * Get ville
-     *
-     * @return string 
-     */
-    public function getVille() {
-        return $this->ville;
-    }
-    
-    /**
-     * Set pays
-     *
-     * @param string $pays
-     */
-    public function setPays($pays) {
-        $this->pays = $pays;
-    }
-    
-    /**
-     * Get pays
-     *
-     * @return string 
-     */
-    public function getPays() {
-        return $this->pays;
-    }
-    
-    /**
-     * Set tel
-     *
-     * @param string $tel
-     */
-    public function setTel($tel) {
-        $this->tel = $tel;
-    }
-    
-    /**
-     * Get tel
-     *
-     * @return string 
-     */
-    public function getTel() {
-        return $this->tel;
-    }
-    
-    /**
-     * Set portable
-     *
-     * @param string $portable
-     */
-    public function setPortable($portable) {
-        $this->portable = $portable;
-    }
-    
-    /**
-     * Get portable
-     *
-     * @return string 
-     */
-    public function getPortable() {
-        return $this->portable;
-    }
-    
-    /**
-     * Set fax
-     *
-     * @param string $fax
-     */
-    public function setFax($fax) {
-        $this->fax = $fax;
-    }
-    
-    /**
-     * Get fax
-     *
-     * @return string 
-     */
-    public function getFax() {
-        return $this->fax;
-    }
-    
-    /**
-     * Set reduction
-     *
-     * @param decimal $reduction
-     */
-    public function setReduction($reduction) {
-        $this->reduction = $reduction;
-    }
-    
-    /**
-     * Get reduction
-     *
-     * @return decimal 
-     */
-    public function getReduction() {
-        return $this->reduction;
-    }
-    
-    /**
-     * Set inscription
-     *
-     * @param date $inscription
-     */
-    public function setInscription($inscription) {
-        $this->inscription = $inscription;
-    }
-    
-    /**
-     * Get inscription
-     *
-     * @return date 
-     */
-    public function getInscription() {
-        return $this->inscription;
-    }
-    
-    /**
-     * Set lastConnect
-     *
-     * @param datetime $lastConnect
-     */
-    public function setLastConnect($lastConnect) {
-        $this->lastConnect = $lastConnect;
-    }
-    
-    /**
-     * Get lastConnect
-     *
-     * @return datetime 
-     */
-    public function getLastConnect() {
-        return $this->lastConnect;
-    }
-    
-    /**
-     * Set actuelConnect
-     *
-     * @param datetime $actuelConnect
-     */
-    public function setActuelConnect($actuelConnect) {
-        $this->actuelConnect = $actuelConnect;
-    }
-    
-    /**
-     * Get actuelConnect
-     *
-     * @return datetime 
-     */
-    public function getActuelConnect() {
-        return $this->actuelConnect;
-    }
-    
-    /**
-     * Set tva
-     *
-     * @param string $tva
-     */
-    public function setTva($tva) {
-        $this->tva = $tva;
-    }
-    
-    /**
-     * Get tva
-     *
-     * @return string 
-     */
-    public function getTva() {
-        return $this->tva;
-    }
-    
-    /**
-     * Set axxAdmin
-     *
-     * @param text $axxAdmin
-     */
-    public function setAxxAdmin($axxAdmin) {
-        $this->axxAdmin = $axxAdmin;
-    }
-    
-    /**
-     * Get axxAdmin
-     *
-     * @return text 
-     */
-    public function getAxxAdmin() {
-        return $this->axxAdmin;
-    }
     public function getRoles() {
         return array ();
     }
@@ -531,58 +243,380 @@ class Customer implements UserInterface {
         
         return true;
     }
-    
+
     /**
      * Set password
      *
      * @param string $password
+     * @return Customer
      */
-    public function setPassword($password) {
+    public function setPassword($password)
+    {
         $this->password = $password;
+        return $this;
     }
-    
+
     /**
      * Set salt
      *
      * @param string $salt
+     * @return Customer
      */
-    public function setSalt($salt) {
+    public function setSalt($salt)
+    {
         $this->salt = $salt;
+        return $this;
     }
-    
+
+    /**
+     * Set lastname
+     *
+     * @param string $lastname
+     * @return Customer
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+        return $this;
+    }
+
+    /**
+     * Get lastname
+     *
+     * @return string 
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * Set firstname
+     *
+     * @param string $firstname
+     * @return Customer
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+        return $this;
+    }
+
+    /**
+     * Get firstname
+     *
+     * @return string 
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * Set company
+     *
+     * @param string $company
+     * @return Customer
+     */
+    public function setCompany($company)
+    {
+        $this->company = $company;
+        return $this;
+    }
+
+    /**
+     * Get company
+     *
+     * @return string 
+     */
+    public function getCompany()
+    {
+        return $this->company;
+    }
+
+    /**
+     * Set adress
+     *
+     * @param text $adress
+     * @return Customer
+     */
+    public function setAdress($adress)
+    {
+        $this->adress = $adress;
+        return $this;
+    }
+
+    /**
+     * Get adress
+     *
+     * @return text 
+     */
+    public function getAdress()
+    {
+        return $this->adress;
+    }
+
+    /**
+     * Set postcode
+     *
+     * @param string $postcode
+     * @return Customer
+     */
+    public function setPostcode($postcode)
+    {
+        $this->postcode = $postcode;
+        return $this;
+    }
+
+    /**
+     * Get postcode
+     *
+     * @return string 
+     */
+    public function getPostcode()
+    {
+        return $this->postcode;
+    }
+
+    /**
+     * Set city
+     *
+     * @param string $city
+     * @return Customer
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+        return $this;
+    }
+
+    /**
+     * Get city
+     *
+     * @return string 
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Set country
+     *
+     * @param string $country
+     * @return Customer
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+        return $this;
+    }
+
+    /**
+     * Get country
+     *
+     * @return string 
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * Set phone
+     *
+     * @param string $phone
+     * @return Customer
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+        return $this;
+    }
+
+    /**
+     * Get phone
+     *
+     * @return string 
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * Set cellular
+     *
+     * @param string $cellular
+     * @return Customer
+     */
+    public function setCellular($cellular)
+    {
+        $this->cellular = $cellular;
+        return $this;
+    }
+
+    /**
+     * Get cellular
+     *
+     * @return string 
+     */
+    public function getCellular()
+    {
+        return $this->cellular;
+    }
+
+    /**
+     * Set fax
+     *
+     * @param string $fax
+     * @return Customer
+     */
+    public function setFax($fax)
+    {
+        $this->fax = $fax;
+        return $this;
+    }
+
+    /**
+     * Get fax
+     *
+     * @return string 
+     */
+    public function getFax()
+    {
+        return $this->fax;
+    }
+
+    /**
+     * Set discount
+     *
+     * @param decimal $discount
+     * @return Customer
+     */
+    public function setDiscount($discount)
+    {
+        $this->discount = $discount;
+        return $this;
+    }
+
+    /**
+     * Get discount
+     *
+     * @return decimal 
+     */
+    public function getDiscount()
+    {
+        return $this->discount;
+    }
+
     /**
      * Set createdAt
      *
      * @param date $createdAt
+     * @return Customer
      */
-    public function setCreatedAt($createdAt) {
+    public function setCreatedAt($createdAt)
+    {
         $this->createdAt = $createdAt;
+        return $this;
     }
-    
+
     /**
      * Get createdAt
      *
      * @return date 
      */
-    public function getCreatedAt() {
+    public function getCreatedAt()
+    {
         return $this->createdAt;
     }
-    
+
     /**
      * Set lastConnection
      *
      * @param datetime $lastConnection
+     * @return Customer
      */
-    public function setLastConnection($lastConnection) {
+    public function setLastConnection($lastConnection)
+    {
         $this->lastConnection = $lastConnection;
+        return $this;
     }
-    
+
     /**
      * Get lastConnection
      *
      * @return datetime 
      */
-    public function getLastConnection() {
+    public function getLastConnection()
+    {
         return $this->lastConnection;
+    }
+
+    /**
+     * Set actualConnect
+     *
+     * @param datetime $actualConnect
+     * @return Customer
+     */
+    public function setActualConnect($actualConnect)
+    {
+        $this->actualConnect = $actualConnect;
+        return $this;
+    }
+
+    /**
+     * Get actualConnect
+     *
+     * @return datetime 
+     */
+    public function getActualConnect()
+    {
+        return $this->actualConnect;
+    }
+
+    /**
+     * Set vat
+     *
+     * @param string $vat
+     * @return Customer
+     */
+    public function setVat($vat)
+    {
+        $this->vat = $vat;
+        return $this;
+    }
+
+    /**
+     * Get vat
+     *
+     * @return string 
+     */
+    public function getVat()
+    {
+        return $this->vat;
+    }
+
+    /**
+     * Set axxAdmin
+     *
+     * @param text $axxAdmin
+     * @return Customer
+     */
+    public function setAxxAdmin($axxAdmin)
+    {
+        $this->axxAdmin = $axxAdmin;
+        return $this;
+    }
+
+    /**
+     * Get axxAdmin
+     *
+     * @return text 
+     */
+    public function getAxxAdmin()
+    {
+        return $this->axxAdmin;
     }
 }
