@@ -141,7 +141,7 @@ class Customer implements UserInterface {
     /**
      * @var datetime $actualConnect
      *
-     * @ORM\Column(name="actual_connect", type="datetime", nullable=true)
+     * @ORM\Column(name="actuel_connect", type="datetime", nullable=true)
      */
     private $actualConnect;
     
@@ -158,6 +158,16 @@ class Customer implements UserInterface {
      * @ORM\Column(name="axx_admin", type="text", nullable=true)
      */
     private $axxAdmin;
+
+     /**
+     * @var text $orders
+     *
+     * @ORM\OneToMany(targetEntity="Openify\Bundle\OrderBundle\Entity\Order", mappedBy="customer")
+     */
+    private $orders;
+    
+    
+    
     
     public function __construct() {
         $this->salt = sha1 ( uniqid ( mt_rand (), true ) );
@@ -618,5 +628,25 @@ class Customer implements UserInterface {
     public function getAxxAdmin()
     {
         return $this->axxAdmin;
+    }
+
+    /**
+     * Add orders
+     *
+     * @param Openify\Bundle\OrderBundle\Entity\Order $orders
+     */
+    public function addOrder(\Openify\Bundle\OrderBundle\Entity\Order $orders)
+    {
+        $this->orders[] = $orders;
+    }
+
+    /**
+     * Get orders
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getOrders()
+    {
+        return $this->orders;
     }
 }
