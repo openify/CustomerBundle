@@ -32,7 +32,7 @@ class LoginListener
     /**
      * Do the magic.
      *
-     * @param  Event $event
+     * @param Event $event
      */
     public function onSecurityInteractiveLogin(Event $event)
     {

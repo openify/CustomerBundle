@@ -7,10 +7,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 class SecurityController extends Controller
 {
-    
+
     /**
      * @Template()
-     */    
+     */
     public function loginAction()
     {
         $request = $this->getRequest();

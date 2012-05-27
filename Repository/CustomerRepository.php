@@ -12,8 +12,8 @@ use Doctrine\ORM\EntityRepository;
  */
 class CustomerRepository extends EntityRepository
 {
-    public function findAllCustomersForGrid() {
-
+    public function findAllCustomersForGrid()
+    {
         return $this->createQueryBuilder ('c')
             ->select ('c')
             ;
