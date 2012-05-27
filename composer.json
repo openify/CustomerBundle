@@ -3,7 +3,7 @@
     "type": "symfony-bundle",
     "description": "A lightweight CustomerBundle",
     "keywords": ["user", "symfony2", "bundle", "openify"],
-    "homepage": "http://github.com/openify/CustomerBundle",
+    "homepage": "http://github.com/openify/OpenifyCustomerBundle",
     "license": "MIT",
 
     "authors": [
