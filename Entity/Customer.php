@@ -126,6 +126,13 @@ class Customer implements UserInterface
     private $discount;
 
     /**
+     * @var birthday $birthday
+     *
+     * @ORM\Column(name="birthday", type="date", nullable=true)
+     */
+    private $birthday;
+    
+    /**
      * @var date $createdAt
      *
      * @ORM\Column(name="inscription", type="date", nullable=false)
@@ -675,5 +682,27 @@ class Customer implements UserInterface
     public function getOrders()
     {
         return $this->orders;
+    }
+
+    /**
+     * Set birthday
+     *
+     * @param date $birthday
+     * @return Customer
+     */
+    public function setBirthday($birthday)
+    {
+        $this->birthday = $birthday;
+        return $this;
+    }
+
+    /**
+     * Get birthday
+     *
+     * @return date 
+     */
+    public function getBirthday()
+    {
+        return $this->birthday;
     }
 }
